@@ -76,17 +76,15 @@ function addToOrder(itemName) {
     // Convert node list to array
     const orderedItemsArray = Array.from(orderedItemsNodeList)
 
+    // Use reduce on the ordered items array to calculate total price
     const totalPrice = orderedItemsArray.reduce((accumulator, item) => {
         const foodKey = item.textContent
         const foodPrice = prices[foodKey]
         return accumulator + foodPrice
     }, 0);
 
-    console.log(totalPrice)
-
-    // Calculate and update the total price
-
-    // Update the text content of the order total element with the new total
+    // Set order total to be equal to calculated total price
+    orderTotalEl.textContent = totalPrice;
 }
 
 // Function to initialize the menu system
