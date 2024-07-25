@@ -8,7 +8,15 @@ const menu = {
 // Function to display menu items by category
 function displayMenuItems(menu) {
     // Get the menu container element from the HTML
-    const menuEl = document.getElementById("menu")
+    const menuEl = document.getElementById("menu");
+    
+    Object.entries(menu).forEach(([course, arr]) => {
+        const menuHeadingEl = document.createElement("h2")
+        menuHeadingEl.textContent = course
+        console.log(course)
+        console.log(arr)
+    }
+);
 
     // Loop through each category and its items in the menu object
 
@@ -52,6 +60,7 @@ function addToOrder(itemName) {
 
 // Function to initialize the menu system
 function initMenuSystem(menu) {
+    displayMenuItems(menu)
     // Call the function to display menu items
 }
 
