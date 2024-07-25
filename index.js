@@ -28,6 +28,7 @@ function displayMenuItems(menu) {
         // Iterate over items within food array, creating list item and appending list item to foodUlEl
         arr.forEach(food => {
             const foodLiEl = document.createElement("li");
+            foodLiEl.addEventListener("click", () => addToOrder(food))
             foodLiEl.textContent = food;
             foodUlEl.append(foodLiEl);
         })
@@ -64,6 +65,7 @@ function displayMenuItems(menu) {
 
 // Callback function for adding an item to the order
 function addToOrder(itemName) {
+    console.log(itemName)
     // Get the order items list and the order total element from the HTML
 
     // Create a list item for the order
