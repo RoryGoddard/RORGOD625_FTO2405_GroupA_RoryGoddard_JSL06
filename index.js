@@ -1,7 +1,7 @@
 // Sample menu data (Consider fetching this data from a server in a real-world scenario)
 const menu = {
     Starters: ["Garlic Bread", "Bruschetta", "Bread Sticks"],
-    MainCourses: ["Margherita Pizza", "Spaghetti Carbonara", "Peixe Pende Panado com Batatas Fritas", "Beef Smash Burger"],
+    MainCourses: ["Margherita Pizza", "Spaghetti Carbonara", "Peixe Pende Empanado com Batatas Fritas", "Beef Smash Burger"],
     Desserts: ["Tiramisu", "Cheesecake", "Belgian Waffles with Ice-Cream"]
 };
 
@@ -9,14 +9,33 @@ const menu = {
 function displayMenuItems(menu) {
     // Get the menu container element from the HTML
     const menuEl = document.getElementById("menu");
+
+    // Create div element to append each course to
+    const courseDivEl = document.createElement("div");
     
+    // Iterate over entries in menu object to do necessary logic with course and array item
     Object.entries(menu).forEach(([course, arr]) => {
-        const menuHeadingEl = document.createElement("h2")
-        menuHeadingEl.textContent = course
-        console.log(course)
-        console.log(arr)
-    }
-);
+        // Create new heading element and set text to name of respective course
+        const menuHeadingEl = document.createElement("h3");
+        menuHeadingEl.textContent = course;
+
+        // Append course heading to course div
+        courseDivEl.append(menuHeadingEl);
+
+        // Create unordered list for storing food items as list items
+        const foodUlEl = document.createElement("ul");
+
+        // Iterate over items within food array, creating list item and appending list item to foodUlEl
+        arr.forEach(food => {
+            const foodLiEl = document.createElement("li");
+            foodLiEl.textContent = food;
+            foodUlEl.append(foodLiEl);
+        })
+
+        // Append unordered list to course div
+        courseDivEl.append(foodUlEl);
+    });
+    menuEl.append(courseDivEl)
 
     // Loop through each category and its items in the menu object
 
