@@ -1,13 +1,14 @@
 // Sample menu data (Consider fetching this data from a server in a real-world scenario)
 const menu = {
-    Starters: ["Garlic Bread", "Bruschetta"],
-    MainCourses: ["Margherita Pizza", "Spaghetti Carbonara"],
-    Desserts: ["Tiramisu", "Cheesecake"]
+    Starters: ["Garlic Bread", "Bruschetta", "Bread Sticks"],
+    MainCourses: ["Margherita Pizza", "Spaghetti Carbonara", "Peixe Pende Panado com Batatas Fritas", "Beef Smash Burger"],
+    Desserts: ["Tiramisu", "Cheesecake", "Belgian Waffles with Ice-Cream"]
 };
 
 // Function to display menu items by category
 function displayMenuItems(menu) {
     // Get the menu container element from the HTML
+    const menuEl = document.getElementById("menu")
 
     // Loop through each category and its items in the menu object
 
