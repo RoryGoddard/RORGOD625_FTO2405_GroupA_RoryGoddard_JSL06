@@ -64,8 +64,25 @@ function addToOrder(itemName) {
     const orderLiEl = document.createElement("li")
     orderLiEl.textContent = itemName
 
+    // Add id attribute to li element
+    orderLiEl.setAttribute("id", "order-li")
+
     // Append the list item to the order items list
     orderEl.append(orderLiEl)
+
+    // Get a list of food items with querySelectorAll 
+    const orderedItemsNodeList = document.querySelectorAll("#order-li")
+
+    // Convert node list to array
+    const orderedItemsArray = Array.from(orderedItemsNodeList)
+
+    const totalPrice = orderedItemsArray.reduce((accumulator, item) => {
+        const foodKey = item.textContent
+        const foodPrice = prices[foodKey]
+        return accumulator + foodPrice
+    }, 0);
+
+    console.log(totalPrice)
 
     // Calculate and update the total price
 
