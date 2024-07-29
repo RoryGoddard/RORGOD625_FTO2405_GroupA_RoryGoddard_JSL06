@@ -54,7 +54,7 @@ function displayMenuItems(menu) {
     menuEl.append(courseDivEl);            
 }
 
-// Callback function for adding an item to the order
+// Function for adding an item to the order
 function addToOrder(itemName) {
     // Get the order items list and the order total element from the HTML
     const orderEl = document.getElementById("order-items")
